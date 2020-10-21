@@ -11,7 +11,7 @@ for(i in 1:10){
   }else if (guess < N){
     print("Higher")
     }else{
-      print("Correct")
+      print("Correct!")
       break
     }
 }
