@@ -1,5 +1,7 @@
 # Split the two teams up
 
+UWvMSU_1.22.13 <- read.table("UWvMSU_1-22-13.txt", header=TRUE, sep= "\t")
+
 msu <- UWvMSU_1.22.13[UWvMSU_1.22.13$team == "MSU",]
 uw <- UWvMSU_1.22.13[UWvMSU_1.22.13$team == "UW",]
 
@@ -23,7 +25,6 @@ for (i in 1:nrow(uw)){
     uwscores[i]=uwscores[i-1]+uw$score[i]
   }
 }
-
 
 plot(msu$time, msuscores, type = 'l', main = "Cumulative Scores for the MSU vs UW Game", ylab = "Total Points", xlab = "Time (Min)", col = "green")
 lines(uw$time, uwscores, col = "red" )
